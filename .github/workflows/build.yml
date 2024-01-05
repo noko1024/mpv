@@ -88,6 +88,8 @@ jobs:
         os:
           - "macos-12"
           - "macos-13"
+          - "macos-13-xlarge"
+          
     steps:
       - uses: actions/checkout@v3
 
