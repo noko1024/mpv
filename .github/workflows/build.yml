@@ -127,8 +127,10 @@ jobs:
         run: |
           cat ./build/meson-logs/testlog.txt
       
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
+      - uses: actions/upload-artifact@v3
+        with:
+          name: mpv-${{ matrix.target }}
+          path: ./build
 
   linux:
     runs-on: "ubuntu-22.04"
