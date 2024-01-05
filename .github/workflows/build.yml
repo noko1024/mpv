@@ -1,3 +1,4 @@
+
 name: build
 
 on:
@@ -123,6 +124,9 @@ jobs:
         if: ${{ failure() && steps.tests.outcome == 'failure' }}
         run: |
           cat ./build/meson-logs/testlog.txt
+      
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
 
   linux:
     runs-on: "ubuntu-22.04"
